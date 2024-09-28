@@ -1,6 +1,6 @@
 - name: print variables from prompt
   hosts: web
   tasks:
-  - name: print  the vars from  prompt
+  - name: print  the vars from inventory
     ansible.builtin.debug:
       msg: "I  am learning {{COURSE}},  Triner is {{TRINER}} and Duration is  {{DURATION}}"
