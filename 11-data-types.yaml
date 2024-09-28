@@ -1,0 +1,21 @@
+- name: Print the course information
+  hosts: local
+  connection: local # if you  are not mentionned this  ansible searching for credentials
+  vars:
+    COURSE: "DevOps With AWS" #string
+    DURATION: 120 Hrs  #number
+    topics: #this is list type  list starting with "-"
+    - Linux
+    - AWS
+    - Ansible
+    - Terraform
+    live: true #boolean  type
+    tools:  #map type ,  map is having key=value  paires
+      ci: Jenkins
+      cm: Ansible
+      cloud: AWS
+  tasks:
+  - name: Print the course  information
+    ansible.builtin.debug:
+      msg: "Hi, I am learning {{ course }}, with duration: {{ duration }}, topics are: {{ topics }}, and live: {{ live }}, tools are: {{ tools }}" 
+      
