@@ -1,8 +1,8 @@
 #instal nginx
-- name: install nginx
+- name: install and run nginx
   hosts: web
   tasks:
   - name: install nginx
     ansible.buitin.package:
-    - name: nginx
+      name: nginx
       state: present
