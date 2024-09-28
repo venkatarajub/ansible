@@ -13,4 +13,4 @@
     vars:
       Course: Ansible
     ansible.builtin.debug:
-      msg: ""i am learning {{Course}} triner {{Triner}} and duration is {{Duration}}""
+      msg: "i am learning {{Course}} triner {{Triner}} and duration is {{Duration}}"
