@@ -1,0 +1,13 @@
+#stop and uninstall nginx
+- name: stop and uninstall nginx
+  hosts: web
+  become: yes
+  tasks:
+  - name: stop nginx
+    ansible.builtin.service:
+      name: nginx
+      state: stopped
+  - name: uninstall nginx
+    ansible.builtin.package:
+      name: nginx
+      state: absent
