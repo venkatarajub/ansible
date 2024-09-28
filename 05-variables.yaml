@@ -14,3 +14,7 @@
       Course: Ansible
     ansible.builtin.debug:
       msg: "i am learning {{Course}} triner {{Triner}} and duration is {{Duration}}"
+
+  - name: Print the info again
+    ansible.builtin.debug:
+      msg: "i am learning {{Course}} triner {{Triner}} and duration is {{Duration}}"
