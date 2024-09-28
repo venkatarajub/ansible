@@ -1,6 +1,6 @@
 - name: print the variables from file
   hosts: web
-  vars:
+  vars_files:
     vars.yaml
   tasks:
   - name: print course info
