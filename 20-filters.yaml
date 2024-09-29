@@ -7,5 +7,7 @@
   tasks:
   - name: print default variable
     ansible.builtin.debug:
-      msg: The course is {{ course }}
-# if you execute above playbook we get error undefined variable
+      #msg: The course is {{ course }}
+      msg: The course is {{ course | default('Ansible') }}
+# if you execute above playbook we get error undefined variable ( undefined variable. The error was: 'course' is undefined.)
+#we can resolve this by declaring default variable
