@@ -15,14 +15,14 @@
 
 # conver string in to upper case by using "upper" function 
 # conver string in to lower case by using "lower" function 
-  - name: covert to uppercase
+  - name: convert to uppercase
     vars:
       greeting: "Hello Venkat"
     ansible.builtin.debug:
-      msg: "{{ greeting | upper }}"
+      msg: " {{ greeting | upper }}"
 
-  - name: conver to lowercase
+  - name: convert to lowercase
     vars:
       greeting: "HELLO VENKAT"
     anssible.builtin.debug:
-      msg: "{{ greeting | lower }}"
+      msg: " {{ greeting | lower }}"
