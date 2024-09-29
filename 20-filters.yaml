@@ -11,3 +11,18 @@
       msg: The course is {{ course | default('Ansible') }}
 # if you execute above playbook we get error undefined variable ( undefined variable. The error was: 'course' is undefined.)
 #we can resolve this by declaring default variable
+
+
+# conver string in to upper case by using "upper" function 
+# conver string in to lower case by using "lower" function 
+  - name: covert to uppercase
+    vars:
+      greeting: "Hello Venkat"
+    ansible.builtin.debug:
+      msg: "{{ greeting | upper}}"
+
+  - name: conver to lowercaser
+    vars:
+      greeting: "HELLO VENKAT"
+    anssible.builtin.debug:
+      msg: "{{ greeting | lower }}"
