@@ -2,8 +2,5 @@
   hosts: local
   connection: local
   tasks:
-  # - name: execute the command
-  #   ansible.builtin.command: ls -ltr > /temp/output.txt
-
-  - name: execute shell
+  - name: execute the command
     ansible.builtin.shell: ls -ltr > /temp/output.txt
