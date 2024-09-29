@@ -1,0 +1,14 @@
+#we need to install few packages  and remove/uninstall few packages
+- name: loops demo install packages and remove few packages
+  hosts: web
+  become: yes
+  tasks:
+  - name: install packeges and remove few packages
+    ansible.builtin.package:
+      name:
+      state:
+    loop:
+    - { name: 'mysql', state: 'present' } 
+    - { name: 'nginx', state: 'absent' }
+    - { name: 'postfix', state: 'present' }
+    - { name: 'httpd', state: 'absent' }
