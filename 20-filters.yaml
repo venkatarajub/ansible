@@ -26,4 +26,10 @@
       greeting: "Hello VENKAT"
     ansible.builtin.debug:
       msg: " {{ greeting | lower }}"
- 
+
+  # to get the unique value from series of multiple events by using "unique" function.
+  - name: to get the unique value
+    vars:
+      numbers: [1,2,34,4,1,4,25,65,1,2]
+    ansible.builtin.debug:
+      msg: " {{ numbers | unique }}"
