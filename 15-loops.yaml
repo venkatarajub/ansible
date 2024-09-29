@@ -1,0 +1,14 @@
+#  loops  are used to  iterate sequence of events
+#  "item" is the key word in anisible
+- name: loops demo
+  hosts: local
+  connection: local
+  tasks:
+  - name: print names
+    ansible.builtin.debug:
+      msg: "Hello {{ item }}"
+    loop:
+    - venkat
+    - Raju
+    - Bandaru
+    - Prasa
