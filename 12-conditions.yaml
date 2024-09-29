@@ -3,7 +3,7 @@
   hosts: local
   connection: local
   vars: prompt
-     prompt: please enter the value
+    prompt: please enter the value
   # vars:
   #   value: 100
 
