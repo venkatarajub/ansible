@@ -8,4 +8,4 @@
   tasks:
   - name: check user exist or not
     ansible.builtin.command: id expense
-    registere: USER
+    register: USER #here USER is a variable that gets output from above command
