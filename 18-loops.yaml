@@ -1,0 +1,15 @@
+#instal the multiple paxkages
+#packages: mysql, nginx, postfix, httpd
+- name: loops demo installing packages
+  hosts: web
+  become: yes
+  tasks:
+  - name: install packages
+    ansible.builtin.packages:
+      name: "{{ item }}"
+      state: present
+    loop:
+    - mysql
+    - nginx
+    - httpd
+    -  postfix
