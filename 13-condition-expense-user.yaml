@@ -1,0 +1,11 @@
+#create  expense user
+#check expense user created or  not
+#if exixt/created, don't create
+#if not exist/created, please create.
+- name: create expense user
+  hosts: web
+  become: yes
+  tasks:
+  - name: check user exist or not
+    ansible.builtin.command: id expense
+    registere: USER
