@@ -9,3 +9,4 @@
   - name: check user exist or not
     ansible.builtin.command: id expense
     register: USER #here USER is a variable that gets output from above command
+    ignore_errors: true
