@@ -60,7 +60,15 @@
 
   - name: check ip address
     vars:
-      myip: 192.23.220.34
+      myip: 335.23.220.34
     ansible.builtin.debug:
       msg: " {{ myip | ipaddr }}"
+      #fatal: [localhost]: FAILED! => {"msg": "Failed to import the required Python library (netaddr) on ip-172-31-87-194.ec2.internal's Python /usr/bin/python3. Please read the module documentation and install it in the appropriate location. If the required library is installed, but Ansible is using the wrong Python interpreter, please consult the documentation on ansible_python_interpreter"}
+
+      #install "netaddr"
+      #python built tool is pip
+      #pip3.9 install netaddr
+
+
+
 
