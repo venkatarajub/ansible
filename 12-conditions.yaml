@@ -2,13 +2,18 @@
 - name: check given value is less than 10 or not
   hosts: local
   connection: local
-  # vars: prompt
-  #   prompt: please enter the value
-  vars:
-    value: 100
+  vars: prompt
+     prompt: please enter the value
+  # vars:
+  #   value: 100
 
   tasks:
-  - name: print given value less than  10 or not
+  - name: print given value less than  10 
     ansible.builtin.debug:
       msg: "Entered value {{ value }} less than 10"
     when: value < 10
+  
+  - name: print given value greater than or equal to 10
+    ansible.builtin.debug:
+      msg: "Entered value {{ value }} greater than or equal to 10"
+    when: value >= 10
