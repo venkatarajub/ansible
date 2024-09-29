@@ -1,0 +1,11 @@
+#Filters in Ansible are from Jinja2, and are used for transforming data inside a template expression
+# defaulting undefined variables:
+#Jinja2 provides a useful ‘default’ filter that is often a better approach to failing if a variable is not defined
+- name: demo on filters
+  hosts: local
+  connection: local
+  tasks:
+  - name: print default variable
+    ansible.builtin.debug:
+      msg: The course is {{ course }}
+# if you execute above playbook we get error undefined variable
