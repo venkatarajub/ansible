@@ -2,9 +2,11 @@
 - name: check given value is less than 10 or not
   hosts: local
   connection: local
-  vars_prompt:
+  vars_prompt: #prompt by default  consider as string
     name: value
     prompt: please enter the value
+    private: false
+
   # vars:
   #   value: 100
 
