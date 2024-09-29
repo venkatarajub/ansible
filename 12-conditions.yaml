@@ -11,4 +11,4 @@
   - name: print given value less than  10 or not
     ansible.builtin.debug:
       msg: "Entered value {{ value }} less than 10"
-    when: value >= 10
+    when: value < 10
