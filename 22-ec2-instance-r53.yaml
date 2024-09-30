@@ -18,4 +18,4 @@
       security_group: "{{ security_group }}"
       image_id: "{{ image_id }}"
     loop: "{{ instances }}"
-    regester: instances_info
+    register: instances_info
