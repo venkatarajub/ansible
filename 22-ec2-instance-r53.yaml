@@ -2,20 +2,20 @@
   hosts: local
   connection: local
   vars:
-    vpc_subnetid: subnet-054be862e00600196
-    security_group: "sg-0719181b23b124491"
+    subnet_id: subnet-054be862e00600196
+    sg_id: "sg-0719181b23b124491"
     image_id: "ami-09c813fb71547fc4f"
-    instances:
-    - mysql
-    - backend
-    - frontend
+    # instances:
+    # - mysql
+    # - backend
+    # - frontend
   tasks:
   - name: create ec2 instance
     amazon.aws.ec2_instance:
-      name: "{{ item }}"
-      vpc_subnetid: "{{ vpc_subnetid }}"
+      name: "mysql"
+      vpc_subnetid: "{{ subnet_id }}"
       instance_type: t2.micro
-      security_group: "{{ security_group }}"
+      security_group: "{{ sg_id }}"
       image_id: "{{ image_id }}"
     loop: "{{ instances }}"
     register: instances_info
