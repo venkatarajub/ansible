@@ -1,7 +1,7 @@
 - name: create  ec2 instance and r53 records
   hosts: local
   connection: local
-  Vars:
+  vars:
     vpc_subnetid: subnet-054be862e00600196
     security_group: "sg-0719181b23b124491"
     image_id: "ami-09c813fb71547fc4f"
