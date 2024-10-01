@@ -6,6 +6,7 @@
     subnet_id: "subnet-05a53cd388f74ef92"
     sg_id: "sg-0bb5c6e23141d9743"
     image_id: "ami-09c813fb71547fc4f"
+    zone: "vensa.online"
     instances:
     - mysql
     - backend
@@ -22,7 +23,18 @@
     loop: "{{ instances }}"
     register: ec2_instances
 
-  - name: print ec2 instances info
-    ansible.builtin.debug:
-      msg: "{{ ec2_instances }}"
+  # - name: print ec2 instances info
+  #   ansible.builtin.debug:
+  #     msg: "{{ ec2_instances }}"
     
+  - name: create private r53 recodes
+    amazon.aws.route53:
+      state: present
+      zone: "{{ zone }}"
+      record: "{{ item.item }}.{{ zone }}"
+      type: A
+      ttl: 1
+      value: "{{ item.instances[0].private_ip_address}}"
+      wait: true
+      allow_overwrite: true
+    loop: "{{ ec2_instances.results}}"
